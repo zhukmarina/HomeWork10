@@ -30,4 +30,7 @@ class SignUpView: UIView {
     @IBAction func signUpButtonAction(_ sender: UIButton) {
         
     }
+    
+  
 }
+

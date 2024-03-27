@@ -29,11 +29,13 @@ extension SignUpViewController {
     @objc func keyboardWillShow(notification: NSNotification) {
          print("keyboardWillShow")
         let keyboardHeight = keyboardHeight(from: notification)
+        scrollView.contentInset.bottom = keyboardHeight
     }
 
     @objc func keyboardWillHide(notification: NSNotification){
          print("keyboardWillHide")
         let keyboardHeight = keyboardHeight(from: notification)
+        scrollView.contentInset.bottom = 0
     }
     
     private func keyboardHeight(from notification: NSNotification) -> CGFloat {
@@ -48,4 +50,11 @@ extension SignUpViewController {
         
         return 0.0
     }
+    
+    @IBAction func signUpButtonAction(_ sender: UIButton) {
+        view.endEditing(true)
+        print("signup")
+    }
+    
+    
 }
